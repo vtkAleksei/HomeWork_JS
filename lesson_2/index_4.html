@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        let a = 10;
+        let b = 15;
+        let result;
+
+        function sum(x, y) {
+            return x + y;
+        }
+        function subtraction(x, y) {
+            return x - y;
+        }
+        function multiplication(x, y) {
+            return x * y;
+        }
+        function div(x, y) {
+            return x / y;
+        }
+        result = sum(a, b);
+        alert(`${a} + ${b} = ${result}`);
+        result = subtraction(a, b);
+        alert(`${a} - ${b} = ${result}`);
+        result = multiplication(a, b);
+        alert(`${a} * ${b} = ${result}`);
+        result = div(a, b);
+        alert(`${a} / ${b} = ${result}`);
+    </script>
+</body>
+
+</html>

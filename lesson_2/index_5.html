@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        let a = 10;
+        let b = 15;
+        let result;
+        let operation = prompt(`Введите опреацию чисел ${a} и ${b} (сложение, вычитание, умножение или деление)`)
+
+        function sum(x, y) {
+            return x + y;
+        }
+        function subtraction(x, y) {
+            return x - y;
+        }
+        function multiplication(x, y) {
+            return x * y;
+        }
+        function div(x, y) {
+            return x / y;
+        }
+        function mathOperation(arg1, arg2, operationLocal) {
+            switch (operationLocal) {
+                case "сложение":
+                    return sum(arg1, arg2);
+                case "вычитание":
+                    return subtraction(arg1, arg2);
+                case "умножение":
+                    return multiplication(arg1, arg2);
+                case "деление":
+                    return div(arg1, arg2);
+                default:
+                    return "Вы ввели некорректное действие.";
+            }
+        }
+        alert(mathOperation(a, b, operation));
+    </script>
+</body>
+
+</html>
