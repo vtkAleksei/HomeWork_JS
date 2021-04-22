@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        class Post {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+            edit(text) {
+                this.text = text;
+            }
+        }
+
+
+        class AttachedPost extends Post {
+            constructor(author, text, date, highlighted) {
+                super(author, text, date);
+                this.highlighted = highlighted;
+            }
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        let obj = new AttachedPost("Pushkin", "текст", "01/01/2021", "false");
+        obj.edit(prompt("Введите текст"));
+        obj.makeTextHighlighted();
+
+        console.log("Объект: " + obj.author + " / " + obj.text + " / " + obj.date + " / " + obj.highlighted);
+
+
+    </script>
+</body>
+
+</html>
