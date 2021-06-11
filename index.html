@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eShop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="menu">
+            <div>
+                <input type="text" class="goods-search" v-model="searchLine">
+                <button class="search-button cart-button" type="button">Искать</button>
+            </div>
+            <button class="cart-button" type="button">Корзина</button>
+        </header>
+        <main>
+            <div class="goods-list">
+                <div class="noData" v-if="filteredGoods.length == 0">
+                    <p class="noData__text">По запросу "{{searchLine}}" ни чего не найдено</p>
+                </div>
+                <div class="goods-item" v-for="good in filteredGoods" v-if="filteredGoods.length>0">
+                    <h3>{{good.product_name}}</h3>
+                    <p>{{good.price}}</p>
+                    <button class="cart-button" type="button" v-on:click ="addGoodCart(good)">В корзину</button>
+                </div>
+            </div>
+            <div class="carts-list" v-show = "cartGoods.length>0? true:false">
+                <div class="cart-item" v-for="cartGood in cartGoods">
+                    <h3>{{cartGood.product_name}}</h3>
+                    <p>{{cartGood.price}}</p>
+                    <button class="cart-button" type="button" v-on:click ="delGoodCart(cartGood)">Удалить</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
